@@ -44,7 +44,7 @@ echarts.extendChartView({
 
             echarts.graphic.setHoverStyle(
                 textEl,
-                echarts.graphic.setTextStyle({}, emphasisTextStyleModel, null, {forMerge: true}, true)
+                echarts.graphic.setTextStyle({}, emphasisTextStyleModel, null, { forMerge: true }, true)
             );
         };
 
@@ -53,11 +53,10 @@ echarts.extendChartView({
 
     remove: function () {
         this.group.removeAll();
-
-        this._model.layoutInstance.dispose();
+        this._model && this._model.layoutInstance && this._model.layoutInstance.dispose();
     },
 
     dispose: function () {
-        this._model.layoutInstance.dispose();
+        this._model && this._model.layoutInstance && this._model.layoutInstance.dispose();
     }
 });
